@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>koppen map</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" integrity="sha512- wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+            crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js" integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA== "
+            crossorigin=""></script>
+        <script src="js/KG_far.js"></script>
+        <script src="js/mapOptions.js"></script>
+        <script src="js/countries.js"></script>
+    </head>
+    <body>
+        <div id="mapid" style="position: absolute; width: 100%; height: 90%;"></div>
+        <script>
+            /* Initialise leaflet map, tilelayer and GeoJSON file */
+            var mymap = L.map('mapid').setView([31.505, -0.09], 2);
+            // set some base map properties
+            mymap.options.minZoom = 2;
+            mymap.options.maxZoom = 8;
+            mymap.doubleClickZoom.disable(); // disable double click zoom (as double click is used to rebound the map to a country in updateMap.js)
+
+
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'
+            }).addTo(mymap);
+            koppenjs = new L.geoJson(kg_far, {
+                onEachFeature: onEachFeature,
+                style: style // style function in (updateMap.js file). Style contains rules on color of geojson layer
+            }).addTo(mymap);
+            mymap.setMaxBounds(koppenjs.getBounds());
+
+            countriesjs = new L.geoJson(countries, {
+            onEachFeature: onEachCountry,
+            style: styleCountry // style function in (updateMap.js file). Style contains rules on color of geojson layer
+            }).addTo(mymap);
+            mymap.setMaxBounds(countriesjs.getBounds());
+
+        </script>
+
+
+
+        <!-- <script>
+            // check that mymap is loaded first before loading the currency data using this listener
+            document.addEventListener('DOMContentLoaded', function () {
+                getCurrencies(baseCurrency); // get the baseCurrency -> here set to GBP (Pound Sterling)
+                info.addTo(mymap); // add the Info Menu
+                legend.addTo(mymap); // add the legend
+            }, false);
+        </script> -->
+
+    </body>
+</html>
