@@ -47,5 +47,5 @@ countriesjs = new L.geoJson(countries, {
 }).addTo(mymap);
 mymap.setMaxBounds(countriesjs.getBounds());
 mymap.on('zoomend', function () {
-    console.log(mymap.getZoom());
+    console.log("Zoom = ", mymap.getZoom());
 });
