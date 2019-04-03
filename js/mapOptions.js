@@ -74,7 +74,7 @@ function onEachFeature(feature, layer) {
 function onEachCountry(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
-        mouseout: resetHighlight,
+        mouseout: resetCountryHighlight,
         click: zoomToFeature
     });
 }
@@ -99,14 +99,12 @@ function highlightFeature(e) {
     }
     // info.update(layer.feature.properties);
 }
-
 function resetHighlight(e) {
-    if (koppenjs) {
-        koppenjs.resetStyle(e.target);
-    }
-    if (countriesjs) {
-        countriesjs.resetStyle(e.target);
-    }
-    
+    koppenjs.resetStyle(e.target);
+    // info.update();
+}
+
+function resetCountryHighlight(e) {
+    countriesjs.resetStyle(e.target);
     // info.update();
 }

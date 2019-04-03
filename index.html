@@ -26,11 +26,16 @@
                 maxZoom: 18,
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'
             }).addTo(mymap);
-            koppenjs = new L.geoJson(kg_far, {
-                onEachFeature: onEachFeature,
-                style: style // style function in (updateMap.js file). Style contains rules on color of geojson layer
-            }).addTo(mymap);
-            mymap.setMaxBounds(koppenjs.getBounds());
+
+            var imageUrl = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+                imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+            L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+            // koppenjs = new L.geoJson(kg_far, {
+            //     onEachFeature: onEachFeature,
+            //     style: style // style function in (updateMap.js file). Style contains rules on color of geojson layer
+            // }).addTo(mymap);
+            // mymap.setMaxBounds(koppenjs.getBounds());
 
             countriesjs = new L.geoJson(countries, {
             onEachFeature: onEachCountry,
@@ -39,7 +44,6 @@
             mymap.setMaxBounds(countriesjs.getBounds());
 
         </script>
-
 
 
         <!-- <script>
