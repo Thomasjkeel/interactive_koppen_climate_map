@@ -4,6 +4,13 @@ An interactive koppen climate map for 3 different scales. Work in Progress
 
 ![Figure 1: Current Map](images/koppengeiger_map1.png)
 
+## Zoom 2:
+![Figure 2: Zoom 2](images/KG_map_zoom2.png)
+
+## Zoom 3:
+![Figure 3: Zoom 3](images/KG_map_zoom3.png)
+
+
 Data Source:
 Beck, Hylke E.; E. Zimmermann, Niklaus; McVicar, Tim R.; Vergopolan, Noemi; Berg, Alexis; Wood, Eric F. (2018): Present and future Köppen-Geiger climate classification maps at 1-km resolution. figshare. Fileset.
 
