@@ -19,3 +19,4 @@ stretch tileLayers in Leaflet: https://stackoverflow.com/questions/18687120/leaf
 * fix zoom to country
 * fix highlight when zoomed in
 * fix France, New Zealand, Netherlands etc.
+* in info -> add % each climate type and then drop-down for future as well

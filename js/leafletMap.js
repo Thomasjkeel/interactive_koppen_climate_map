@@ -16,7 +16,8 @@ L.tileLayer('tileLayers/tileLayer1/{z}/{x}/{y}.png', {
     tms: true,
     minZoom: 0,
     maxNativeZoom: 1,
-    maxZoom: 2
+    maxZoom: 2,
+    opacity: 0.7
 }).addTo(mymap);
 
 var tileLayer2 = L.tileLayer('tileLayers/tileLayer2/{z}/{x}/{y}.png', {
@@ -24,7 +25,8 @@ var tileLayer2 = L.tileLayer('tileLayers/tileLayer2/{z}/{x}/{y}.png', {
     tms: true,
     maxNativeZoom: 3,
     minZoom: 2,
-    maxZoom: 5
+    maxZoom: 5,
+    opacity: 0.7
 }).addTo(mymap);
 
 L.tileLayer('tileLayers/tileLayer3/{z}/{x}/{y}.png', {
@@ -32,7 +34,8 @@ L.tileLayer('tileLayers/tileLayer3/{z}/{x}/{y}.png', {
     tms: true,
     maxNativeZoom: 6,
     minZoom: 5,
-    maxZoom: 8
+    maxZoom: 8,
+    opacity: 0.5
 }).addTo(mymap);
 // koppenjs = new L.geoJson(kg_far, {
 //     onEachFeature: onEachFeature,
