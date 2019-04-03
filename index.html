@@ -22,14 +22,16 @@
             mymap.doubleClickZoom.disable(); // disable double click zoom (as double click is used to rebound the map to a country in updateMap.js)
 
 
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 18,
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'
-            }).addTo(mymap);
+            // L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            //     maxZoom: 18,
+            //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'
+            // }).addTo(mymap);
 
-            var imageUrl = 'images/koppengeiger_tile1.jpg',
-                imageBounds = [[90, 225.00000000000003 ], [-90, -225.00000000000003]];
-            L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
+            // L.tileLayer('path/to/image/output_folder/{z}/{x}/{y}.png',
+            //     {
+            //         attribution: 'Georeferenced Image',
+            //         tms: true
+            // }).addTo(map);
             // koppenjs = new L.geoJson(kg_far, {
             //     onEachFeature: onEachFeature,
             //     style: style // style function in (updateMap.js file). Style contains rules on color of geojson layer
