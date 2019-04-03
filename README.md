@@ -16,8 +16,8 @@ Beck, Hylke E.; E. Zimmermann, Niklaus; McVicar, Tim R.; Vergopolan, Noemi; Berg
 
 Methodology:
 ### 1. Make tiles using:
-* gdal_translate gdal_translate -of vrt -expand rgba Beck_KG_V1_present_0p083.tif YourtileLayer.vrt
-* gdal2tiles.py YourtileLayer.vrt
+* gdal_translate gdal_translate -of vrt -expand rgba Beck_KG_V1_present_0p083.tif !tileLayer!.vrt
+* gdal2tiles.py !tileLayer!.vrt
 #### refs: https://gis.stackexchange.com/questions/286649/displaying-tiles-generated-by-gdal2tiles-with-openlayers
 stretch tileLayers in Leaflet: https://stackoverflow.com/questions/18687120/leaflet-zoom-in-further-and-stretch-tiles
 
