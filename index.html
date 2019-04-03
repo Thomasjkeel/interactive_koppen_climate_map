@@ -15,7 +15,7 @@
         <div id="mapid" style="position: absolute; width: 100%; height: 90%;"></div>
         <script>
             /* Initialise leaflet map, tilelayer and GeoJSON file */
-            var mymap = L.map('mapid').setView([31.505, -0.09], 2);
+            var mymap = L.map('mapid').setView([31.505, -0.09], 1);
             // set some base map properties
             mymap.options.minZoom = 2;
             mymap.options.maxZoom = 8;
@@ -27,34 +27,40 @@
             //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>'
             // }).addTo(mymap);
 
-            // L.tileLayer('path/to/image/output_folder/{z}/{x}/{y}.png',
-            //     {
-            //         attribution: 'Georeferenced Image',
-            //         tms: true
-            // }).addTo(map);
+            L.tileLayer('tileLayers/tileLayer2/{z}/{x}/{y}.png',
+                {
+                    attribution: 'Georeferenced Image',
+                    tms: true
+            }).addTo(mymap);
             // koppenjs = new L.geoJson(kg_far, {
             //     onEachFeature: onEachFeature,
             //     style: style // style function in (updateMap.js file). Style contains rules on color of geojson layer
             // }).addTo(mymap);
             // mymap.setMaxBounds(koppenjs.getBounds());
+            
+            L.tileLayer('tileLayers/tileLayer2/{z}/{x}/{y}.png',
+                {
+                attribution: 'Georeferenced Image',
+                tms: true
+            }).addTo(mymap);
 
             countriesjs = new L.geoJson(countries, {
             onEachFeature: onEachCountry,
             style: styleCountry // style function in (updateMap.js file). Style contains rules on color of geojson layer
             }).addTo(mymap);
             mymap.setMaxBounds(countriesjs.getBounds());
-            console.log(countriesjs.getSouthWest());
         </script>
 
 
-        <!-- <script>
+        <script>
             // check that mymap is loaded first before loading the currency data using this listener
             document.addEventListener('DOMContentLoaded', function () {
-                getCurrencies(baseCurrency); // get the baseCurrency -> here set to GBP (Pound Sterling)
-                info.addTo(mymap); // add the Info Menu
-                legend.addTo(mymap); // add the legend
+                // getCurrencies(baseCurrency); // get the baseCurrency -> here set to GBP (Pound Sterling)
+                // info.addTo(mymap); // add the Info Menu
+                // legend.addTo(mymap); // add the legend
+                console.log("complete")
             }, false);
-        </script> -->
+        </script>
 
     </body>
 </html>
