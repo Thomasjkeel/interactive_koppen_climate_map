@@ -28,7 +28,7 @@
             }).addTo(mymap);
 
             var imageUrl = 'images/koppengeiger_tile1.jpg',
-                imageBounds = [[-90, -225.00000000000003], [90, 225.00000000000003 ]];
+                imageBounds = [[90, 225.00000000000003 ], [-90, -225.00000000000003]];
             L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
             // koppenjs = new L.geoJson(kg_far, {
             //     onEachFeature: onEachFeature,
@@ -41,7 +41,7 @@
             style: styleCountry // style function in (updateMap.js file). Style contains rules on color of geojson layer
             }).addTo(mymap);
             mymap.setMaxBounds(countriesjs.getBounds());
-            console.log(mymap.getBounds());
+            console.log(countriesjs.getSouthWest());
         </script>
 
 
